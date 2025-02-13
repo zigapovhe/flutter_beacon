@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/services.dart';
 import 'package:flutter_beacon/flutter_beacon.dart';
 import 'package:flutter_beacon_example/controller/requirement_state_controller.dart';
 import 'package:get/get.dart';
@@ -15,10 +14,8 @@ class _TabBroadcastingState extends State<TabBroadcasting> {
   final clearFocus = FocusNode();
   bool broadcasting = false;
 
-  final regexUUID = RegExp(
-      r'[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}');
-  final uuidController =
-      TextEditingController(text: 'CB10023F-A318-3394-4199-A8730C7C1AEC');
+  final regexUUID = RegExp(r'[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}');
+  final uuidController = TextEditingController(text: 'CB10023F-A318-3394-4199-A8730C7C1AEC');
   final majorController = TextEditingController(text: '0');
   final minorController = TextEditingController(text: '0');
 
@@ -159,8 +156,8 @@ class _TabBroadcastingState extends State<TabBroadcasting> {
 
   Widget get buttonBroadcast {
     final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
-      onPrimary: Colors.white,
-      primary: broadcasting ? Colors.red : Theme.of(context).primaryColor,
+      foregroundColor: Colors.white,
+      backgroundColor: broadcasting ? Colors.red : Theme.of(context).primaryColor,
       minimumSize: Size(88, 36),
       padding: EdgeInsets.symmetric(horizontal: 16),
       shape: const RoundedRectangleBorder(
